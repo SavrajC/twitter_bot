@@ -11,7 +11,6 @@ const client = new Twitter({
 });
 
 module.exports.twitBot = async () => {
-  console.log("node 1")
   try {
     const res = await fetch('https://geek-jokes.sameerkumar.website/api?format=json');
 

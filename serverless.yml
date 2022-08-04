@@ -17,7 +17,7 @@ functions:
     handler: handler.twitBot
     events:
       #- schedule: cron(55 15 ? * MON-FRI *)
-      - schedule: cron(0 1/8 ? * MON-FRI *)
+      - schedule: cron(45 1/7 ? * MON-FRI *)
 
     environment:
       TWITTER_CONSUMER_KEY: ${env:CONSUMER_KEY}
