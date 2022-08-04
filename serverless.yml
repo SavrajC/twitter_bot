@@ -62,12 +62,17 @@ provider:
 functions:
   hello:
     handler: handler.twitBot
+     events:
+     # scheduled for every 3 hours
+      - schedule: cron(0 */3 * * *)
+
     environment:
       TWITTER_CONSUMER_KEY: ${env:CONSUMER_KEY}
       TWITTER_CONSUMER_SECRET: ${env:CONSUMER_SECRET}
       TWITTER_ACCESS_TOKEN_KEY: ${env:ACCESS_TOKEN}
       TWITTER_ACCESS_TOKEN_SECRET: ${env:ACCESS_TOKEN_SECRET}
       TWITTER_BEARER_TOKEN: ${env:BEARER_TOKEN}
+  
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
