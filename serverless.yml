@@ -1,8 +1,6 @@
-
-
 service: twitter-bot
 useDotenv: true
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 provider:
   name: aws
@@ -16,7 +14,6 @@ functions:
   hello:
     handler: handler.twitBot
     events:
-      #- schedule: cron(55 15 ? * MON-FRI *)
       - schedule: cron(45 1/7 ? * MON-FRI *)
 
     environment:
@@ -25,5 +22,3 @@ functions:
       TWITTER_ACCESS_TOKEN_KEY: ${env:ACCESS_TOKEN}
       TWITTER_ACCESS_TOKEN_SECRET: ${env:ACCESS_TOKEN_SECRET}
       TWITTER_BEARER_TOKEN: ${env:BEARER_TOKEN}
-  
-
